@@ -300,6 +300,8 @@ class Reporter {
     let message;
     if (data.deployed){
       const web3 = data.contract.web3;
+      console.log("data.receipt", data.receipt);
+      console.log("data", data);
       const tx = await data.contract.web3.eth.getTransaction(data.receipt.transactionHash);
       const balance = await data.contract.web3.eth.getBalance(tx.from);
 
